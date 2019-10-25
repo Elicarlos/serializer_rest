@@ -27,7 +27,7 @@ def snippet_list(request):
 def snippet_detail(request, pk):
     try:
         snippet = Snippet.objects.get(pk=pk)
-    except Snippet.DoeNotExists:
+    except Snippet.DoesNotExists:
         return HttpResponse(status=400)
 
     if request.method == 'GET':
